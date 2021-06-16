@@ -1,0 +1,22 @@
+dom_paragraphs_extra.paragraph.add:
+  path: '/admin/config/dom-paragraphs/{type}/add'
+  defaults:
+    _entity_form: 'paragraph.default'
+    _title: 'Add Paragraph'
+  requirements:
+    _custom_access: '\Drupal\dom_paragraphs_extra\DomParagraphsExtraAccess::access'
+dom_paragraphs_extra.paragraph.edit:
+  path: '/admin/config/dom-paragraphs/edit/{paragraph}'
+  defaults:
+    _entity_form: 'paragraph.edit'
+    _title: 'Edit Paragraph'
+  requirements:
+    _custom_access: '\Drupal\dom_paragraphs_extra\DomParagraphsExtraAccess::access'
+dom_paragraphs_extra.paragraph.delete:
+  path: '/admin/config/dom-paragraphs/delete/{paragraph}'
+  defaults:
+    _entity_form: 'paragraph.delete'
+    _title: 'Delete Paragraph'
+  requirements:
+    _custom_access: '\Drupal\dom_paragraphs_extra\DomParagraphsExtraAccess::access'
+

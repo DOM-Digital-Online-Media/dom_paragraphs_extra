@@ -1,0 +1,6 @@
+dom_paragraphs_extra.paragraph_item_add:
+  route_name: dom_paragraphs_extra.paragraph.add
+  title: 'Add paragraph'
+  class: \Drupal\dom_paragraphs_extra\Plugin\Menu\DomParagraphsExtraAction
+  appears_on:
+    - view.dom_paragraphs.dom_paragraphs_page
