@@ -1,10 +1,8 @@
 name: "DOM Paragraphs"
 type: module
-description: "Provides routes for configuring paragraphs."
-core: 8.x
+description: "Provides extra functionality for paragraphs like UI for management, views REST output etc."
 core_version_requirement: ^8 || ^9
 package: "DOM"
 dependencies:
   - paragraphs
   - paragraphs_type_permissions
-

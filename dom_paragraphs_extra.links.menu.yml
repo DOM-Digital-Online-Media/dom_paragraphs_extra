@@ -1,0 +1,8 @@
+dom_paragraphs_extra.paragraphs:
+  title: 'Paragraphs'
+  route_name: dom_paragraphs_extra.paragraphs
+  parent: system.admin_config
+dom_paragraphs_extra.paragraph_bundles:
+  parent: dom_paragraphs_extra.paragraphs
+  class: Drupal\Core\Menu\MenuLinkDefault
+  deriver: Drupal\dom_paragraphs_extra\Plugin\Derivative\DomParagraphsExtraLink

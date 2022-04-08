@@ -1,0 +1,18 @@
+{
+    "name": "dom-digital-online-media/dom_paragraphs_extra",
+    "description": "Provides extra functionality for paragraphs like UI for management, views REST output etc.",
+    "type": "drupal-module",
+    "license": "GPL-2.0-or-later",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "version": "1.1",
+    "authors": [
+        {
+            "name": "Victor Golovachek",
+            "email": "v.golovachek@dev-branch.com"
+        }
+    ],
+    "require": {
+        "drupal/paragraphs": "^1.12"
+    }
+}

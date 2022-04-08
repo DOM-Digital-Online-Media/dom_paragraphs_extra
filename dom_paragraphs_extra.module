@@ -1,0 +1,31 @@
+<?php
+
+/**
+ * @file
+ * Main module file for dom_paragraphs_extra.
+ */
+
+/**
+ * Implements hook_views_data_alter().
+ */
+function dom_paragraphs_extra_views_data_alter(array &$data) {
+  foreach ($data as $name => &$field_data) {
+    $name_parts = explode('__', $name);
+    if (count($name_parts) !== 2) {
+      continue;
+    }
+    [, $field] = $name_parts;
+
+    // Identify entity reference fields and add custom one for REST export.
+    if (isset($field_data[$field . '_target_id'], $field_data[$field]['title'])) {
+      $field_label = $field_data[$field]['title'];
+      $field_data['dom_paragraph_rest_' . $field] = $field_data[$field];
+      $label = t('@field entities export for REST', ['@field' => $field_label]);
+
+      $field_data['dom_paragraph_rest_' . $field]['title'] = $label;
+      unset($field_data['dom_paragraph_rest_' . $field]['title short']);
+      $field_data['dom_paragraph_rest_' . $field]['field']['title'] = $label;
+      $field_data['dom_paragraph_rest_' . $field]['field']['id'] = 'dom_paragraphs_rest_field';
+    }
+  }
+}
