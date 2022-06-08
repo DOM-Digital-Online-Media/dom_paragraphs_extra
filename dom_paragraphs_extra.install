@@ -1,0 +1,19 @@
+<?php
+
+/**
+ * @file
+ * Install file for dom_paragraphs_extra.
+ */
+
+use Drupal\Core\Field\BaseFieldDefinition;
+
+/**
+ * Add field weight for paragraphs.
+ */
+function dom_paragraphs_extra_update_9001(&$sandbox) {
+  $definition = BaseFieldDefinition::create('integer')
+    ->setLabel(t('Weight'))
+    ->setDescription(t('Paragraph item weight.'));
+  \Drupal::entityDefinitionUpdateManager()
+    ->installFieldStorageDefinition('weight', 'paragraph', 'dom_paragraphs_extra', $definition);
+}

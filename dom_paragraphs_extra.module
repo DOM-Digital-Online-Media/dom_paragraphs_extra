@@ -5,6 +5,8 @@
  * Main module file for dom_paragraphs_extra.
  */
 
+use Drupal\Core\Field\BaseFieldDefinition;
+
 /**
  * Implements hook_views_data_alter().
  */
@@ -28,4 +30,25 @@ function dom_paragraphs_extra_views_data_alter(array &$data) {
       $field_data['dom_paragraph_rest_' . $field]['field']['id'] = 'dom_paragraphs_rest_field';
     }
   }
+}
+
+/**
+ * Implements hook_entity_base_field_info().
+ */
+function dom_paragraphs_extra_entity_base_field_info(\Drupal\Core\Entity\EntityTypeInterface $entity_type) {
+  $fields = [];
+  if ($entity_type->id() == 'paragraph') {
+    $fields['weight'] = BaseFieldDefinition::create('integer')
+      ->setLabel(t('Weight'))
+      ->setDescription(t('Paragraph item weight.'));
+  }
+  return $fields;
+}
+
+/**
+ * Implements hook_preprocess_sortableviews_handle().
+ */
+function dom_paragraphs_extra_preprocess_sortableviews_handle(&$variables) {
+  $variables['content'] = '';
+  $variables['#attached']['library'][] = 'dom_paragraphs_extra/sortableviews-style';
 }

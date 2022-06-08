@@ -13,6 +13,7 @@
         }
     ],
     "require": {
-        "drupal/paragraphs": "^1.12"
+        "drupal/paragraphs": "^1.12",
+        "drupal/sortableviews": "^1.0@beta"
     }
 }

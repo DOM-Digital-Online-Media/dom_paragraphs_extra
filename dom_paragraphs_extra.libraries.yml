@@ -1,0 +1,4 @@
+sortableviews-style:
+  css:
+    component:
+      css/sortableviews.css: {}

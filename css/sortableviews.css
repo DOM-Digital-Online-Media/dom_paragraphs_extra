@@ -1,0 +1,9 @@
+.sortableviews-handle {
+  display: block;
+  cursor: move;
+  width: 14px;
+  height: 14px;
+  margin: -0.4em 0.5em 0;
+  padding: 0.42em 0.5em;
+  background: url(/core/misc/icons/787878/move.svg) no-repeat 6px 7px;
+}
