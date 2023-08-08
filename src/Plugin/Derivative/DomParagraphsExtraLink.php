@@ -22,12 +22,10 @@ class DomParagraphsExtraLink extends DeriverBase implements ContainerDeriverInte
   /**
    * Constructs a new DomParagraphsExtraLink object.
    *
-   * @param string $base_plugin_id
-   *   The base plugin ID.
    * @param \Drupal\Core\Entity\EntityTypeBundleInfoInterface $entity_type_bundle_info
    *   The entity type bundle info service.
    */
-  public function __construct($base_plugin_id, EntityTypeBundleInfoInterface $entity_type_bundle_info) {
+  public function __construct(EntityTypeBundleInfoInterface $entity_type_bundle_info) {
     $this->entityTypeBundleInfo = $entity_type_bundle_info;
   }
 
@@ -36,7 +34,6 @@ class DomParagraphsExtraLink extends DeriverBase implements ContainerDeriverInte
    */
   public static function create(ContainerInterface $container, $base_plugin_id) {
     return new static(
-      $base_plugin_id,
       $container->get('entity_type.bundle.info')
     );
   }
