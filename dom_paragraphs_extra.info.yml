@@ -1,7 +1,7 @@
 name: "DOM Paragraphs"
 type: module
 description: "Provides routes for configuring paragraphs."
-core_version_requirement: ^8.0 || ^9.0 || ^10
+core_version_requirement: ^9.0 || ^10
 package: "DOM"
 dependencies:
   - paragraphs
